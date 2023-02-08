@@ -90,22 +90,21 @@ body {
   height: 80px;
 }
 
-/* triangle 1 */
+/* triangle's grouped elements */
 
-.triangle-1 {
+[class|="triangle"] {
   width: 25px;
   height: 25px;
-
-  background: cyan;
-
-  border-top-right-radius: 30%;
-
-  transform: translateX(-40px) translateY(-110%) rotate(-90deg) skewX(-30deg)
-    scale(1, 0.866);
 }
 
-.triangle-1::before,
-.triangle-1::after {
+.triangle-1,
+.triangle-3 {
+  background: cyan;
+  border-top-right-radius: 30%;
+}
+
+[class|="triangle"]::after,
+::before {
   content: "";
   position: absolute;
   width: inherit;
@@ -115,20 +114,22 @@ body {
   border-top-right-radius: inherit;
 }
 
-.triangle-1::before {
-  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translateY(-50%);
-}
-
-.triangle-1::after {
+[class|="triangle"]::after {
   transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translateX(50%);
 }
 
+[class|="triangle"]::before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translateY(-50%);
+}
+
+/* triangle 1 */
+.triangle-1 {
+  transform: translate(-40px, -110%) rotate(-90deg) skewX(-30deg)
+    scale(1, 0.866);
+}
+
 /* triangle 2 */
-
 .triangle-2 {
-  width: 25px;
-  height: 25px;
-
   background: yellow;
 
   border-top-right-radius: 30%;
@@ -137,54 +138,8 @@ body {
     scale(1, 0.866) scale(-1);
 }
 
-.triangle-2::before,
-.triangle-2::after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background: inherit;
-
-  border-top-right-radius: inherit;
-}
-
-.triangle-2::before {
-  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translateY(-50%);
-}
-
-.triangle-2::after {
-  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translateX(50%);
-}
-
 /* triangle 3 */
-
 .triangle-3 {
-  width: 25px;
-  height: 25px;
-
-  background: cyan;
-
-  border-top-right-radius: 30%;
-
-  transform: translateX(-40px) translateY(-572%) rotate(-90deg) skewX(-30deg)
+  transform: translate(-40px, -572%) rotate(-90deg) skewX(-30deg)
     scale(1, 0.866);
-}
-
-.triangle-3::before,
-.triangle-3::after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background: inherit;
-
-  border-top-right-radius: inherit;
-}
-
-.triangle-3::before {
-  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translateY(-50%);
-}
-
-.triangle-3::after {
-  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translateX(50%);
 }
